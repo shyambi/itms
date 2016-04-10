@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <style>
+
+     * {
+        font-family: Times New Roman;
+      }
+        h1 {
+      background-color: green;
+      color: white;
+      font-size: 200%;
+    }
+    p  {
+      color: black;
+      font-size: 100%;
+    }
+    select.servers {
+        height:40px;
+        background:transparent;
+        border: 2px solid green;
+        width: 200px;
+        color: black;
+        font-size: 14;
+     }
+     input.submit {
+    width:180px;
+    clear:left;
+    text-align:right;
+    padding-right:10px;
+    margin-left: 5%;
+    height:40px;
+    border: 2px solid green;
+    color: white;
+    background:blue;
+ 
+}
+    </style>
+
+    <meta charset="UTF-8">
+
+    <title>IT Management System</title>
+
+</head>
+
+<body>
+
+<h1>IT Management System </h1>
+
+<p>We are pleased to announce that, we have created nice application to manage your IT infra
+information</p>
+<br><br>
+
+<form class="cs" action="results.html" method="get">
+ <select class="servers">
+  <option value="volvo" >Networks</option>
+  <option value="saab">Bare Metal Servers</option>
+  <option value="opel">ESX Servers</option>
+  <option value="audi">VMs</option>
+     <option value="audi">Projects</option>
+     <option value="audi">Vcenter Servers</option>
+     <option value="audi">IPs</option>
+     <option value="">Managers</option>
+<input class="submit" type="submit" value="SEARCH" />
+</form>
+
+</select>
+
+<h3> Networks </h3>
+ <ul>
+  <li>Network1</li>
+  <li>Network2</li>
+  <li><a href="{% url 'admin:index' %}"> Admin panel</a></li>
+</ul>
+
+<h3> ESX servers </h3>
+ <ul>
+  <li>Server1</li>
+  <li>Server2</li>
+  <li>Server3</li>
+</ul>
+
+<h3> VMs</h3>
+ <ul>
+  <li>VM1</li>
+  <li>VM2</li>
+  <li>VM3/li>
+</ul>
+
+</body>
+
+</html>

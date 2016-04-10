@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+ul.h_bar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 10;
+    width: 100%;
+    left: 200px;
+
+}
+
+ul.h_bar li {
+    float: left;
+
+}
+
+ul.h_bar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.h_bar li a:hover:not(.active) {
+    background-color: #111;
+}
+
+ul.h_bar .active {
+    background-color: #4CAF50;
+}
+</style>
+</head>
+<body>
+
+<ul class="h_bar">
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>
+
+<ul class="v_bar">
+  <li><a href="#home">Bare Metal Servers</a></li>
+  <li><a href="#news">Networks</a></li>
+  <li><a href="#contact">ESX Servers</a></li>
+  <li><a href="#about">Vcenter Servers</a></li>
+  <li><a href="#about">VMs</a></li>
+  <li><a href="#about">Projects</a></li>
+  <li><a href="#about">Managers</a></li>
+
+</ul>
+</body>
+</html>

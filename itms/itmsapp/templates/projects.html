@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ITMS</title>
+</head>
+<body>
+<h1> Your IT Resources </h1>
+{% if latest_resource_list %}
+    <ul>
+    {% for resource in latest_resource_list %}
+        <li>{{ resource.project_info }}</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+
+</body>
+</html>

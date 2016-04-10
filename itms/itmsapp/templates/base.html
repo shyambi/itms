@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'itmsapp/nav_bar.css' %}" />
+
+
+</head>
+<body>
+<ul class="h_bar">
+  <li><a class="active" href="{% url 'itmsapp:resources' %}">Home</a></li>
+  <li><a href="{% url 'itmsapp:networktopology' %}">NetworkTopology</a></li>
+  <li><a href="{% url 'itmsapp:backups' %}">Backups</a></li>
+  <li><a href="{% url 'admin:index' %}">AdminPanel</a></li>
+</ul>
+{% block method_content %}{% endblock method_content %}
+</body>
+</html>

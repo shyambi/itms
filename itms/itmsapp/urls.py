@@ -5,11 +5,8 @@ from . import views
 app_name = 'itmsapp'
 
 urlpatterns = [
-    #url(r'^$', views.index, name='index'),
-    url(r'^networks/$', views.resource_list, name='resource_list'),
-    #url(r'^name/$', views.get_name, name='name'),
-    url(r'^$', views.get_name, name='name'),
-
-
+    url(r'^$', views.resources, name='resources'),
+    url(r'^networktopology/', views.network_topology, name='networktopology'),
+    url(r'^backups/', views.backups, name='backups'),
 
 ]

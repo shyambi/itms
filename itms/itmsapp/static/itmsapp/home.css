@@ -1,0 +1,90 @@
+* {
+        font-family: Times New Roman;
+        font-size: 16;
+      }
+ h1 {
+      color: #666;
+      font-size: 200%;
+    }
+ h2 {
+    color: #666;
+  }
+
+
+
+
+/* Horizontal bar css */
+
+.it_resources {
+        height:40px;
+        background:transparent;
+        border: 2px solid blue;
+        width: 200px;
+        color: black;
+        font-size: 14;
+        margin-left: 5%;
+ }
+
+
+.submit {
+    width:180px;
+    clear:left;
+    text-align:right;
+    padding-right:10px;
+    margin-left: 5%;
+    height:40px;
+    border: 2px solid blue;
+    color: white;
+    background-color: #006666;
+
+}
+
+
+ul.tuple_header{
+    font-size: 20;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(15, 102, 188, 0.5);
+    position: fixed;
+    width: 100%;
+}
+
+ul.tuple_header li {
+    float: left;
+    border: 50px;
+    spacing: 50px;
+    padding: 50ox
+
+}
+
+ul.tuple{
+    font-size: 20;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(15, 102, 188, 0.5);
+    position: fixed;
+    width: 100%;
+}
+
+ul.tuple li {
+    float: left;
+    border: 50px;
+    spacing: 50px;
+    padding: 50ox;
+}
+
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+th {
+    text-align: left;
+}

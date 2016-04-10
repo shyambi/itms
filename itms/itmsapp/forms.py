@@ -11,7 +11,19 @@ class NameForm(forms.Form):
                 ("cloud_types", "Cloud Types"),
                 ("managers", "Managers"),
                 ("projects", "Projects"),
+                ("device_types", "Device Types"),
+                ("devices", "Devices"),
                 )
     resource_types = forms.ChoiceField(choices=OPTIONS, label="Select Resource Type:")
-    #resource_types.widget_attrs({'class':'it_resources', 'size':'40'})
     resource_types.widget.attrs['class']='it_resources'
+
+
+class BackupsForm(forms.Form):
+
+    OPTIONS = (
+                ("backup", "Backup"),
+                ("restore", "Restore"),
+
+                )
+    action_types = forms.ChoiceField(choices=OPTIONS, label="Select Backup/Restore:")
+    action_types.widget.attrs['class']='it_resources'

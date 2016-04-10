@@ -1,140 +1,15 @@
+
 <!DOCTYPE html>
+
 <html>
+
 <head>
-<style>
- * {
-        font-family: Times New Roman;
-        font-size: 16;
-      }
- h1 {
-      color: #666;
-      font-size: 200%;
-    }
- h2 {
-    color: #666;
-  }
+{% extends "base.html" %}
+{% block method_content %}
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'itmsapp/home.css' %}" />
 
 
-
-
-/* Horizontal bar css */
-ul.h_bar {
-    font-size: 20;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #000080;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    left: 0;
-    height: 70px;
-
-}
-
-ul.h_bar li {
-    float: left;
-
-}
-
-ul.h_bar li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 150%;
-    font-weight: bold;
-}
-
-
-ul.h_bar li a:hover {
-    background-color: #4CAF50;
-}
-
-.it_resources {
-        height:40px;
-        background:transparent;
-        border: 2px solid blue;
-        width: 200px;
-        color: black;
-        font-size: 14;
-        margin-left: 5%;
- }
-
-
-input.submit {
-    width:180px;
-    clear:left;
-    text-align:right;
-    padding-right:10px;
-    margin-left: 5%;
-    height:40px;
-    border: 2px solid blue;
-    color: white;
-    background:#000080;
-
-}
-
-
-ul.tuple_header{
-    font-size: 20;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgba(15, 102, 188, 0.5);
-    position: fixed;
-    width: 100%;
-}
-
-ul.tuple_header li {
-    float: left;
-    border: 50px;
-    spacing: 50px;
-    padding: 50ox
-
-}
-
-ul.tuple{
-    font-size: 20;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: rgba(15, 102, 188, 0.5);
-    position: fixed;
-    width: 100%;
-}
-
-ul.tuple li {
-    float: left;
-    border: 50px;
-    spacing: 50px;
-    padding: 50ox;
-}
-
-
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-}
-th {
-    text-align: left;
-}
-
-</style>
-
-<ul class="h_bar">
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">NetworkTopology</a></li>
-  <li><a href="#devices">Devices</a></li>
-  <li><a href="{% url 'admin:index' %}">AdminPanel</a></li>
-</ul>
 
 </head>
 <body>
@@ -153,12 +28,11 @@ th {
 <br><br>
 
 {% if latest_resource_list %}
-<h2>Resources are: </h2>
-
 
 
 
    {% if resource_name == "networks" %}
+<h2>Networks: </h2>
 <table style="width:100%">
   <tr>
          <th>Range </th>
@@ -189,6 +63,7 @@ th {
 </table>
          <td>{{ resource.  }}</td>
    {% elif resource_name == "network_types" %}
+<h2>Network Types: </h2>
 <table style="width:100%">
   <tr>
          <th>Name</th>
@@ -207,6 +82,7 @@ th {
 </table>
 
    {% elif resource_name == "bare_metal_servers" %}
+<h2>Bare Metal Servers: </h2>
 <table style="width:100%">
   <tr>
          <th>IP Address</th>
@@ -234,6 +110,7 @@ th {
 </table>
 
    {% elif resource_name == "vms" %}
+<h2>Virtual Machines: </h2>
 <table style="width:100%">
   <tr>
          <th>Name</th>
@@ -262,6 +139,7 @@ th {
 
 </table>
    {% elif resource_name == "clouds" %}
+<h2>Clouds:</h2>
 <table style="width:100%">
   <tr>
          <th>Name</th>
@@ -288,6 +166,7 @@ th {
 </table>
 
    {% elif resource_name == "cloud_types" %}
+<h2>Cloud Types: </h2>
 <table style="width:100%">
   <tr>
          <th>Name</th>
@@ -304,6 +183,7 @@ th {
 
 </table>
    {% elif resource_name == "managers" %}
+<h2>Managers: </h2>
 <table style="width:100%">
   <tr>
          <th>Name</th>
@@ -319,6 +199,7 @@ th {
 
 </table>
    {% elif resource_name == "projects" %}
+<h2>Projects: </h2>
 <table style="width:100%">
   <tr>
          <th>Project Name</th>
@@ -334,11 +215,48 @@ th {
    {% endfor %}
 
 </table>
+   {% elif resource_name == "device_types" %}
+<h2>Device Types: </h2>
+<table style="width:100%">
+  <tr>
+         <th>Device Type Name</th>
+
+  </tr>
+
+   {% for resource in latest_resource_list %}
+  <tr>
+         <td>{{ resource.name }}</td>
+
+  </tr>
+   {% endfor %}
+
+</table>
+   {% elif resource_name == "devices" %}
+<h2>Devices </h2>
+<table style="width:100%">
+  <tr>
+         <th>Device Type</th>
+         <th>Model</th>
+         <th>Other Information</th>
+         <th>AssignedTo</th>
+  </tr>
+
+   {% for resource in latest_resource_list %}
+  <tr>
+         <td>{{ resource.device_type }}</td>
+         <td>{{ resource.model_name }}</td>
+         <td>{{ resource.other_info }}</td>
+         <td>{{ resource.assigned_to }}</td>
+
+  </tr>
+   {% endfor %}
+
+</table>
     {% endif %}
 
 {% endif %}
 
 
-
+{% endblock method_content %}
 </body>
 </html>

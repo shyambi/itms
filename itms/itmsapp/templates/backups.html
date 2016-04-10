@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+{% extends "base.html" %}
+{% block method_content %}
+{% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'itmsapp/home.css' %}" />
+
+
+
+</head>
+<body>
+
+
+<br><br><br><br>
+<h2> Backup/Restore your IT information to/from Excel Sheet  </h2>
+
+<form class="cs" action="/itms/backups/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input class="submit" type="submit" value="Submit" />
+</form>
+
+{% if summary %}
+   <h2>{{summary}} </h2>
+{% endif %}
+
+
+{% endblock method_content %}
+</body>
+</html>
+
+

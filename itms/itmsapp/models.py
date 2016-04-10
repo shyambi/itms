@@ -113,3 +113,30 @@ class vms(models.Model):
 
     class Meta:
         verbose_name_plural="VMs"
+
+class device_types(models.Model):
+    name = models.CharField(max_length=200)
+
+
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural="Device Types"
+
+class devices(models.Model):
+    device_type = models.ForeignKey(device_types, on_delete=models.CASCADE, null=True, blank=True)
+    model_name = models.CharField(max_length=200)
+    other_info = models.CharField(max_length=200, null=True, blank=True)
+    assigned_to = models.CharField(max_length=200, null=True, blank=True)
+
+
+
+
+
+    def __str__(self):
+        return self.model_name
+
+    class Meta:
+        verbose_name_plural="Devices"

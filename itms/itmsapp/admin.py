@@ -12,6 +12,8 @@ admin.site.register(cloud_types)
 admin.site.register(clouds)
 admin.site.register(projects)
 admin.site.register(managers)
+admin.site.register(device_types)
+admin.site.register(devices)
 
 
 
